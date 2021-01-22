@@ -1,0 +1,14 @@
+
+
+.invisible {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.visible {
+    display: inherit;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
