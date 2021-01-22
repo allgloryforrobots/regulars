@@ -3,12 +3,12 @@
 .invisible {
     display: none;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 150px;
+    left: 10px;
 }
 .visible {
     display: inherit;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 150px;
+    left: 10px;
 }

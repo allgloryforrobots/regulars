@@ -1,0 +1,11 @@
+.toCenter {
+    margin: 0 auto;
+    max-width: 980px;
+    padding: 1vw;
+}
+.wrapGrid {
+    max-width: 978px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

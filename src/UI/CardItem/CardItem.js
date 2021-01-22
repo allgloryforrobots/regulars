@@ -11,17 +11,12 @@ function CardItem({cardData}) {
     let [result, setSuccess] = React.useState('invisible')
     let [error, setError] = React.useState('invisible')
 
-    let [text, setText] = React.useState('')
-
-
-
     const onRegClick = e => {
         navigator.clipboard.writeText(e.target.value)
         message.info('Copied!')
     }
 
     const onChangeText = e => {
-        setText(e.target.value)
         if (cardData.validator.test(e.target.value)) {
             setSuccess('visible')
             setError('invisible')
@@ -37,10 +32,9 @@ function CardItem({cardData}) {
               style={{
                   width: 300,
                   minHeight: 185,
-                  margin: 10
+                  marginTop: '25px'
               }}
               title={cardData.title}
-              key={Math.random()}
               extra={
                   <Popover content={<p>{cardData.tip}</p>}>
                       <InfoCircleTwoTone/>
@@ -64,8 +58,7 @@ function CardItem({cardData}) {
                            width: 250,
                            textAlign: 'center'
                        }}
-                       value={text}
-                       onChange={e => onChangeText(e, cardData.validator)}
+                       onChange={e => onChangeText(e)}
                 />
                     <span className={result}><PlusCircleTwoTone twoToneColor="#52c41a"/><Text type="success">  Совпало!</Text></span>
                     <span className={error}><MinusCircleTwoTone twoToneColor="#FF4136"/> <Text type="danger"> Не совпало!</Text></span>

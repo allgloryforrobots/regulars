@@ -1,5 +1,4 @@
 import React from 'react'
-import {Space} from "antd"
 import 'antd/dist/antd.css'
 import data from '../data'
 import CardItem from "./CardItem/CardItem"
@@ -8,12 +7,11 @@ import CardItem from "./CardItem/CardItem"
 function CardLayer() {
 
     return (
-        <Space size={[4, 16]} wrap>
+        <div className="wrapGrid">
             {
-                data.map(cardData => <CardItem cardData={cardData}/>)
+                data.map(cardData => <CardItem cardData={cardData} key={cardData.validator}/>)
             }
-        </Space>
-
+        </div>
     )
 }
 
