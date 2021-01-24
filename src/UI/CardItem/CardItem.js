@@ -36,14 +36,17 @@ function CardItem({cardData}) {
               }}
               title={cardData.title}
               extra={
-                  <>
+                  <>    {cardData.tip ?
                       <Popover
                           overlayStyle={{
                               maxWidth: 400
                           }}
                           content={<p>{cardData.tip}</p>}>
                           <InfoCircleTwoTone/>&nbsp;
-                      </Popover>
+                      </Popover> : null
+                  }
+
+
                           {cardData.spec ?
                               <Popover
                                   overlayStyle={{
