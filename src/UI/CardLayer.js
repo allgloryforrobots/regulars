@@ -4,12 +4,18 @@ import data from '../data'
 import CardItem from "./CardItem/CardItem"
 
 
-function CardLayer() {
-
+function CardLayer({filter, search}) {
+    console.log(filter, search)
     return (
         <div className="wrapGrid">
             {
-                data.map(cardData => <CardItem cardData={cardData} key={cardData.validator}/>)
+                data.filter(el => {
+                    if (filter === 'Search') {
+                        return el.title.includes(search)
+                    }
+
+                    return el.group === filter
+                }).map(cardData => <CardItem cardData={cardData} key={cardData.validator}/>)
             }
         </div>
     )

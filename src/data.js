@@ -126,6 +126,8 @@ export default [
     },
 
 
+
+
     {
         tip: 'Проверка на число.',
         validator: /^\d{1,}$/,
@@ -175,34 +177,29 @@ export default [
         validator: /^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
         placeholder: 'https://sample.com',
         title: 'URL с протоколом',
-        group: 'Файлы и Url'
+        group: 'Web'
     },
     {
         tip: 'URL аккаунта на Facebook',
         validator: /(?:http:\/\/)?(?:www\.)?facebook\.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[\w\-]*\/)*([\w\-]*)/,
         placeholder: 'https://www.facebook.com/maria.zakharova.167',
         title: 'Facebook URL',
-        group: 'Файлы и Url'
+        group: 'Web'
     },
     {
         tip: 'Получение ID видео на YouTube',
         validator: /https:\/\/(?:youtu\.be\/|(?:[a-z]{2,3}\.)?youtube\.com\/watch(?:\?|#\!)v=)([\w-]{11}).*/gi,
         placeholder: 'https://youtu.be/tBuuGZMVBPA',
         title: 'YouTube',
-        group: 'Файлы и Url'
+        group: 'Web'
     },
-
-
-
     {
-        tip: 'Получение ID видео на YouTube',
-        validator: /https:\/\/(?:youtu\.be\/|(?:[a-z]{2,3}\.)?youtube\.com\/watch(?:\?|#\!)v=)([\w-]{11}).*/gi,
-        placeholder: 'https://youtu.be/tBuuGZMVBPA',
-        title: 'YouTube',
-        group: 'Файлы и Url'
+        tip: 'Цвета в шестнадцатеричном формате',
+        validator: /\#([a-fA-F]|[0-9]){3, 6}/,
+        placeholder: '#CD5C5C',
+        title: 'HEX-цвета',
+        group: 'Web'
     },
-
-
 
 
 

@@ -1,9 +1,15 @@
 import React from "react"
 import CardLayer from "./UI/CardLayer"
 import './Universal.css'
-import {Menu} from 'antd';
+import {Input, Menu} from 'antd'
 
 function App() {
+    let [filter, setFilter] = React.useState('Пользовательские данные')
+    let [search, setSearch] = React.useState('')
+
+    const handleClick = e => {
+        setFilter(e.key )
+    }
 
     return (
         <>
@@ -18,34 +24,37 @@ function App() {
             </header>
 
             <div className="toCenter">
-                <Menu mode="horizontal">
-                    <Menu.Item key="mail">
-                        Почта
+                <Menu mode="horizontal" onClick={handleClick} selectedKeys={[filter]}>
+                    <Menu.Item key="Пользовательские данные">
+                        Пользовательские данные
                     </Menu.Item>
-                    <Menu.Item key="uri">
-                        Uri
+                    <Menu.Item key="Распространенные форматы">
+                        Распространенные форматы
                     </Menu.Item>
-                    <Menu.Item key="number">
-                        Цифры
+                    <Menu.Item key="Числа">
+                        Числа
                     </Menu.Item>
-                    <Menu.Item key="string">
-                        Строки
+                    <Menu.Item key="Web">
+                        Web
                     </Menu.Item>
-                    <Menu.Item key="time">
-                        Дата/Время
-                    </Menu.Item>
-                    <Menu.Item key="other">
-                        Другое
+                    <Menu.Item key="Search">
+                        <Input style={{
+                            borderRadius: 25,
+                            width: 250
+                        }}
+                        onChange={e => setSearch(e.target.value)}
+                        placeholder="Поиск" />
                     </Menu.Item>
                 </Menu>
 
 
+
                 <main>
-                    <CardLayer/>
+                    <CardLayer filter={filter} search={search}/>
                 </main>
 
 
-                <footer className="toCenter">
+                <footer className="toCenter" style={{marginTop: 20}}>
                 <span>2020 © IT-дизель
                     &mdash;&nbsp;<a rel="noreferrer" target="_blank" href="https://github.com/allgloryforrobots/regulars">GitHub</a>
                 </span>
