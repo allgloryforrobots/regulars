@@ -16,10 +16,12 @@ function App() {
             <header style={{
                 background: '#0074D9',
                 minHeight: 60,
+                display: 'flex',
+                alignItems: 'center',
                 boxShadow: '0px 2px 4px 0px rgba(34, 60, 80, 0.2)',
             }}>
                 <div className="toCenter">
-                    <h1 style={{color: '#7FDBFF'}}>🏠 RegExp-Избушка</h1>
+                    <h1 style={{color: '#7FDBFF', margin: 0}}>🏠 RegExp-Избушка</h1>
                 </div>
             </header>
 
