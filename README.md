@@ -1,6 +1,6 @@
-## Reg Exp App
+## RegExp-Избушка
 
-React, Ant Design
+React, Ant Design, TS
 
-
+https://regizb.web.app
 
