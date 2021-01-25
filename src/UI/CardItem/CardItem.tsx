@@ -4,19 +4,34 @@ import InfoCircleTwoTone from "@ant-design/icons/lib/icons/InfoCircleTwoTone"
 import PlusCircleTwoTone from "@ant-design/icons/lib/icons/PlusCircleTwoTone"
 import MinusCircleTwoTone from "@ant-design/icons/lib/icons/MinusCircleTwoTone"
 import './CardItem.css'
+
 const { Text } = Typography
 
-function CardItem({cardData}) {
 
-    let [result, setSuccess] = React.useState('invisible')
-    let [error, setError] = React.useState('invisible')
 
-    const onRegClick = e => {
+interface ICardItem {
+    cardData: {
+        validator: RegExp
+        title: string
+        tip?: string
+        specTip?: string
+        spec?: string
+        placeholder: string
+        group: string
+    }
+}
+
+const CardItem: React.FC<ICardItem> = ({cardData}) => {
+
+    let [result, setSuccess] = React.useState<string>('invisible')
+    let [error, setError] = React.useState<string>('invisible')
+
+    const onRegClick = (e: any) => {
         navigator.clipboard.writeText(e.target.value)
         message.info('Copied!')
     }
 
-    const onChangeText = e => {
+    const onChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (cardData.validator.test(e.target.value)) {
             setSuccess('visible')
             setError('invisible')
@@ -61,7 +76,7 @@ function CardItem({cardData}) {
         >
             <Space direction="vertical">
                 <Input
-                    value={cardData.validator}
+                    value={String(cardData.validator)}
                     style={{
                         borderRadius: 25,
                         width: 250
@@ -83,6 +98,6 @@ function CardItem({cardData}) {
             </Space>
         </Card>
     )
-}
+};
 
 export default CardItem

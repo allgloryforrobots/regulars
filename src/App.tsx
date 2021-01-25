@@ -3,16 +3,19 @@ import CardLayer from "./UI/CardLayer"
 import './Universal.css'
 import {Input, Menu} from 'antd'
 
-function App() {
-    let [filter, setFilter] = React.useState('Пользовательские данные')
-    let [search, setSearch] = React.useState('')
 
-    const handleClick = e => {
+const App: React.FC = () => {
+    let [filter, setFilter] = React.useState<string>('Пользовательские данные')
+    let [search, setSearch] = React.useState<string>('')
+
+    // Ant Design spec type event
+    const handleClick = (e: any) => {
         setFilter(e.key )
     }
 
+
     return (
-        <>
+        <div>
             <header style={{
                 background: '#0074D9',
                 minHeight: 60,
@@ -58,13 +61,16 @@ function App() {
 
                 <footer className="toCenter" style={{marginTop: 20}}>
                 <span>2020 © IT-дизель
-                    &mdash;&nbsp;<a rel="noreferrer" target="_blank" href="https://github.com/allgloryforrobots/regulars">GitHub</a>
+                    &mdash;&nbsp;<a rel="noreferrer"
+                                    target="_blank"
+                                    href="https://github.com/allgloryforrobots/regulars">
+                        GitHub</a>
                 </span>
                 </footer>
 
             </div>
-        </>
+        </div>
     )
-}
+};
 
 export default App
